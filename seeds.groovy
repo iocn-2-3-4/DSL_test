@@ -5,11 +5,12 @@ pipelineJob('example') {
     triggers {
      scm('H/2 * * * *')
   } 
-     steps {
+  steps {
     dsl {
       external('jenkinsfile')  
     }
   }
+  deliveryPipelineConfiguration('Build', 'Build')
 
 
 }
