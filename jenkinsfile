@@ -1,4 +1,26 @@
-#!/usr/bin/env groovy
+pipeline {
+    agent any
 
-/* `buildPlugin` step provided by: https://github.com/jenkins-infra/pipeline-library */
-buildPlugin(jdkVersions: [7])
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+        stage('Misc') {
+            steps {
+                echo 'None'
+            }
+        }
+    }
+}
