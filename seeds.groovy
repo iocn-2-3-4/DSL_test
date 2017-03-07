@@ -1,5 +1,4 @@
 pipelineJob('example') {
-     agent any
 
     stages {
         stage('Build') {
