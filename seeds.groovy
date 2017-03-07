@@ -5,12 +5,12 @@ pipelineJob('example') {
     triggers {
      scm('H/2 * * * *')
   } 
-  steps {
-    dsl {
-      external('jenkinsfile')  
+    definition {
+        cps {
+            script(readFileFromWorkspace('project-a-workflow.groovy'))
+            sandbox()
+        }
     }
-  }
-  deliveryPipelineConfiguration('Build', 'Build')
 
 
 }
