@@ -3,6 +3,32 @@ job('Seeds_test') {
     git ('https://github.com/iocn-2-3-4/git_1.git')
   }
   steps {
-    shell 'ls -l'
+    pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+        stage('Misc') {
+            steps {
+                echo 'None'
+            }
+        }
+    }
+}
+
   }
 }
