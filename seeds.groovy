@@ -1,6 +1,6 @@
 job('Seeds_test') {
   scm {
-    git ('https://github.com/iocn-2-3-4/git_1.git')
+    git ('https://github.com/iocn-2-3-4/DSL_test.git')
   }
     steps {
     dsl {
