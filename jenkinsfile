@@ -5,16 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                job("project_test/test-compile") {
-                 logRotator(-1, 10)
-
-                triggers {
-                 // githubPush()
-                scm('H/2 * * * *')
-               }
-    steps{
-        shell "ls -al /var/lib/jenkins/workspace/project_test/cloneFromGit/"
-    }
             }
         }
         stage('Test') {
