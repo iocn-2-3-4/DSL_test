@@ -5,6 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                rsync -avz  /var/lib/jenkins/workspace/jenkins/ root@192.168.96.239:/var/www/djangotest/hello/
+                ssh root@192.168.96.239 service uwsgi restart
                 build("jenkins")
             }
         }
