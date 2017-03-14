@@ -1,5 +1,6 @@
 job('example') {
     description('My first job')
+    displayName('Job DSL Example Project')
 }
 
 pipelineJob('pipeline') {
