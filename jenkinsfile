@@ -5,12 +5,12 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "from django.shortcuts import render
+                echo "from django.shortcuts import render\n
 
 # Create your views here.
 # Create your views here.
-from django.http import HttpResponse
-def foo(request):
+from django.http import HttpResponse\n
+def foo(request):\n
     return HttpResponse("Hello0 ++++")" >> var/lib/jenkins/workspace/jenkins/views.py
                 rsync -avz  /var/lib/jenkins/workspace/jenkins/ root@192.168.96.239:/var/www/djangotest/hello/
                 ssh root@192.168.96.239 service uwsgi restart
