@@ -1,4 +1,4 @@
-pipelineJob('example') {
+pipelineJob('pipeline') {
   scm {
     git ('https://github.com/pingwin4ik/dsl.git')
   }
