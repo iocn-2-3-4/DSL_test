@@ -1,6 +1,12 @@
 job('example') {
     description('My first job')
     displayName('Job DSL Example Project')
+    environmentVariables {
+        script('''
+           mkdir -p tests
+           rm -rf /tmp/tests.tmp
+        ''')
+    }
 }
 
 pipelineJob('pipeline') {
