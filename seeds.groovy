@@ -1,6 +1,6 @@
 job('example') {
     description('My first job')
-    displayName('Job DSL Example Project')
+    displayName('example')
     environmentVariables {
         script('''
            mkdir -p tests
