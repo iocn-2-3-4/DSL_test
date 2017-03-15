@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                shell('pylint views.py')
+                pylint views.py
             }
         }
         stage('Deploy') {
