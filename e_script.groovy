@@ -3,8 +3,8 @@ pipelineJob('e_pipeline') {
         cpsScm {
             scm {
                 git ('https://github.com/iocn-2-3-4/DSL_test.git')
+                scriptPath ('jenkinsfile')
             }
-            scriptPath ('jenkinsfile')
         }
     }
 }
