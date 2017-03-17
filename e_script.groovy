@@ -4,7 +4,6 @@ pipelineJob('e_pipeline') {
             scm {
                 git ('https://github.com/iocn-2-3-4/DSL_test.git')
                 scriptPath ('https://github.com/iocn-2-3-4/DSL_test/edit/master/e_script.groovy')
-                input 'hello'
             }
         }
     }
