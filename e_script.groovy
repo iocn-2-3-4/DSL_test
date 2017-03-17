@@ -8,4 +8,3 @@ pipelineJob('e_pipeline') {
         }
     }
 }
-а
