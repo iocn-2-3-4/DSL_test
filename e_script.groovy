@@ -1,11 +1,5 @@
-job('DSL-Tutorial-1-Test') {
+pipelineJob('e_pipeline') {
     scm {
-        git('git://github.com/quidryan/aws-sdk-test.git')
-    }
-    triggers {
-        scm('H/15 * * * *')
-    }
-    steps {
-        maven('-e clean test')
+        github ('https://github.com/iocn-2-3-4/DSL_test.git', 'master')
     }
 }
