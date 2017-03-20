@@ -1,4 +1,4 @@
-cloneWorkspace ('jenkins', String criteria = 'Any')
+cloneWorkspace ('jenkins', 'Any')
 folder('jobs_dsl') {
   
   job('Clone') {
