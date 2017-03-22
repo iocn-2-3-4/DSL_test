@@ -11,7 +11,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                pylint $WORKSPACE/views.py
+                pylint /var/lib/jenkins/workspace/pipeline/views.py
             }
         }
         stage('Deploy') {
