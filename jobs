@@ -8,7 +8,11 @@ def folderName = 'folder_test_a'
 job("${folderName}/test") {
     scm {
         github('iocn-2-3-4/DSL_test.git', 'master')
-        scriptPath('hello.groovy')
+    }
+    steps {
+        dsl {
+            external "hello.groovy"
+        }
     }
 }
 job("${folderName}/build") {
