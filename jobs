@@ -7,10 +7,9 @@ def folderName = 'folder_test_a'
     
 job("${folderName}/test") {
     scm {
-        github('jenkinsci/job-dsl-plugin', 'master')
+        github('iocn-2-3-4/DSL_test.git', 'master')
         scriptPath('hello.groovy')
     }
-
 }
 job("${folderName}/build") {
     logRotator(-1, 10)
