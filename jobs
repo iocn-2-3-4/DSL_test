@@ -6,15 +6,9 @@ import hudson.*
 def folderName = 'folder_test_a'
     
 job("${folderName}/test") {
-    logRotator(-1, 10)
-
-    triggers {
-        // githubPush()
-        scm('H/2 * * * *')
-    }
-    steps{
-        shell "echo step1...."
-            shell(readFileFromWorkspace('test2.groovy'))
+    scm {
+        github('jenkinsci/job-dsl-plugin', 'master')
+        scriptPath('hello.groovy')
     }
 
 }
@@ -27,18 +21,6 @@ job("${folderName}/build") {
     }
     steps{
         shell "echo 'buils code'"
-    }
-
-}
-job("${folderName}/deploy") {
-    logRotator(-1, 10)
-
-    triggers {
-        // githubPush()
-        scm('H/2 * * * *')
-    }
-    steps{
-        shell(readFileFromWorkspace('deploy2'))
     }
 
 }
