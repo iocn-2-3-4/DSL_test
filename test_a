@@ -23,7 +23,7 @@ job("${folderName}/clone_test_a"){
 job("${folderName}/create_test_a_jobs") {
     logRotator(-1, 10)
     scm {
-        github('iocn-2-3-4/DSL_test2', 'master')
+        github('iocn-2-3-4/DSL_test', 'master')
     }
     triggers {
         // githubPush()
