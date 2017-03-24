@@ -4,6 +4,6 @@ class GroovyPrintExample {
       print "World"
    }
 }
-a = new GroovyPrintExample
+def a = new GroovyPrintExample()
 a()
 println "Hello World"
