@@ -38,6 +38,7 @@ job("${folderName}/create_test_a_jobs") {
 }
 
 pipelineJob("${folderName}/${folderName}-pipeline") {
+    definition {
     scm {
         github('iocn-2-3-4/DSL_test', 'master')
     }
@@ -51,4 +52,5 @@ pipelineJob("${folderName}/${folderName}-pipeline") {
             external "jenkinsfile"
         }
     }
+}
 }
