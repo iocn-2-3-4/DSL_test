@@ -10,7 +10,7 @@ job("${folderName}/test") {
         github('iocn-2-3-4/DSL_test', 'master')
     }
     steps {
-            shell "hello.groovy"
+            groovyScriptFile("hello.groovy")
     }
 }
 job("${folderName}/build") {
