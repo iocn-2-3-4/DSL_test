@@ -39,7 +39,7 @@ job("${folderName}/create_test_a_jobs") {
 
 pipelineJob("${folderName}/${folderName}-pipeline") {
     scm {
-        github('iocn-2-3-4/DSL_test2', 'master')
+        github('iocn-2-3-4/DSL_test', 'master')
     }
     triggers {
         // githubPush()
