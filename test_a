@@ -41,7 +41,7 @@ pipelineJob("${folderName}/${folderName}-pipeline") {
     definition {
         cpsScm {
             scm {
-                git('https://github.com/iocn-2-3-4/DSL_test.git')
+                github('iocn-2-3-4/DSL_test2', 'master')
                 scriptPath('jenkinsfile')
             }
         }
