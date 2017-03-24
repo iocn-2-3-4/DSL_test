@@ -1,0 +1,10 @@
+import groovy.io.FileType
+import hudson.FilePath
+import hudson.*
+
+def folderName = 'folder_test_a'
+
+folder(folderName) {
+    displayName('folderName')
+    description('Folder for project test_a')
+}
