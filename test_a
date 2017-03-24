@@ -38,10 +38,17 @@ job("${folderName}/create_test_a_jobs") {
 }
 
 pipelineJob("${folderName}/${folderName}-pipeline") {
-    definition {
-        cps {
-            script(readFileFromWorkspace("jenkinsfile"))
-            sandbox()
+    scm {
+        github('iocn-2-3-4/DSL_test2', 'master')
+    }
+    triggers {
+        // githubPush()
+        scm('H/2 * * * *')
+    }
+    steps {
+
+        dsl {
+            external "jenkinsfile"
         }
     }
 }
