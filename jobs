@@ -3,7 +3,8 @@ import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
 
-
+def folderName = 'folder_test_a'
+    
 job("${folderName}/test") {
     logRotator(-1, 10)
 
