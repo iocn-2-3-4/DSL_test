@@ -19,8 +19,10 @@ job("${folder_name}/build") {
     steps{
         shell "echo 'buils code'"
     }
+ }
     
  job("${folder_name}/deploy") {
     steps{
         shell "echo 'buils code'"
+    }
  }
