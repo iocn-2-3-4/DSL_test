@@ -4,15 +4,15 @@ import hudson.*
 
 def main_seed_name = "test_a"
 def folder_name = "${main_seed_name}_folder"
-def path_to_workspace = "/var/lib/jenkins/workspace/${folderName}"
+def path_to_workspace = "/var/lib/jenkins/workspace/${folder_name}"
 
-folder("${folderName}") {
-    displayName("${folderName}")
+folder("${folder_name}") {
+    displayName("${folder_name}")
     description('Folder for project test_a')
 }
 
 
-job("${folderName}/create_jobs") {
+job("${folder_name}/create_jobs") {
     logRotator(-1, 10)
     scm {
         github('iocn-2-3-4/DSL_test', 'master')
@@ -29,7 +29,7 @@ job("${folderName}/create_jobs") {
     }
 }
 
-pipelineJob("${folderName}/${folderName}-pipeline") {
+pipelineJob("${folder_name}/${folder_name}-pipeline") {
     definition {
         cpsScm {
             scm {
