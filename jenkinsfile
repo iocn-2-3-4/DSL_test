@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    triggers {
-        upstream('create_jobs', 'SUCCESS')
-    }
 
     stages {
         stage('Build') {
