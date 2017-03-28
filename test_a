@@ -29,7 +29,7 @@ job("${folder_name}/create_jobs") {
     }
 }
 
-pipelineJob("${folder_name}/${folder_name}-pipeline") {
+pipelineJob("${folder_name}/${folder_name}_pipeline") {
     definition {
         cpsScm {
             scm {
