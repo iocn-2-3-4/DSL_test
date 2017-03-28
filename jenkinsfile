@@ -7,7 +7,7 @@ pipeline {
     //}
     
     triggers {
-        buildResult() {
+        buildResult('H/1 * * * *') {
             combinedJobs()
             triggerInfo('create_jobs', BuildResult.SUCCESS)
         }
