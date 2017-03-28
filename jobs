@@ -16,12 +16,6 @@ job("${folder_name}/test") {
     }
 }
 job("${folder_name}/build") {
-    logRotator(-1, 10)
-
-    triggers {
-        // githubPush()
-        scm('H/2 * * * *')
-    }
     steps{
         shell "echo 'buils code'"
     }
