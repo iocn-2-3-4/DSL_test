@@ -23,6 +23,4 @@ job("${folder_name}/build") {
  job("${folder_name}/deploy") {
     steps{
         shell "echo 'buils code'"
-    }
-
-}
+ }
