@@ -5,6 +5,13 @@ pipeline {
             projects('create_jobs')
         }
     }
+    
+    triggers {
+        buildResult() {
+            combinedJobs()
+            triggerInfo('create_jobs', BuildResult.SUCCESS)
+        }
+    }
 
     stages {
         stage('Build') {
@@ -15,6 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 build job: 'test'
+                buildButton()
             }
         }
         stage('Deploy') {
