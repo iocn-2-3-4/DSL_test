@@ -30,6 +30,9 @@ job("${folder_name}/create_jobs") {
 }
 
 pipelineJob("${folder_name}/${folder_name}_pipeline") {
+    triggers {
+        upstream('create_jobs', 'SUCCESS')
+    }    
     definition {
         cpsScm {
             scm {
