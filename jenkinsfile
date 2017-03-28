@@ -1,10 +1,10 @@
 pipeline {
     agent any
-    publishers {
-        joinTrigger {
-            projects('create_jobs')
-        }
-    }
+   // publishers {
+     //   joinTrigger {
+       //     projects('create_jobs')
+        //}
+    //}
     
     triggers {
         buildResult() {
