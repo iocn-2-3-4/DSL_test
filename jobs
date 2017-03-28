@@ -2,10 +2,12 @@
 import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
-
-def folderName = 'folder_test_a'
     
-job("${folderName}/test") {
+def main_seed_name = "test_a"
+def folder_name = "${main_seed_name}_folder"
+def path_to_workspace = "/var/lib/jenkins/workspace/${folder_name}"
+    
+job("${folder_name}/test") {
     scm {
         github('iocn-2-3-4/DSL_test', 'master')
     }
@@ -13,7 +15,7 @@ job("${folderName}/test") {
             systemGroovyScriptFile("hello.groovy")
     }
 }
-job("${folderName}/build") {
+job("${folder_name}/build") {
     logRotator(-1, 10)
 
     triggers {
