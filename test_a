@@ -2,25 +2,17 @@ import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
 
-def folderName = 'folder_test_a'
+echo $WORKSPACE
+def folderName = 'test_a_folder'
+def path_to_workspace = "/var/lib/jenkins/workspace/${folderName}"
 
 folder("${folderName}") {
     displayName("${folderName}")
     description('Folder for project test_a')
 }
 
-def path_to_workspace = "/var/lib/jenkins/workspace/${folderName}"
 
-job("${folderName}/clone_test_a"){
-    scm {
-        github('iocn-2-3-4/DSL_test2', 'master')
-    }
-    triggers {
-        scm('H/2 * * * *')
-    }
-}
-
-job("${folderName}/create_test_a_jobs") {
+job("${folderName}/create_jobs") {
     logRotator(-1, 10)
     scm {
         github('iocn-2-3-4/DSL_test', 'master')
