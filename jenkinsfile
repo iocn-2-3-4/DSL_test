@@ -1,16 +1,7 @@
 pipeline {
     agent any
-   // publishers {
-     //   joinTrigger {
-       //     projects('create_jobs')
-        //}
-    //}
-    
     triggers {
-        buildResult() {
-            combinedJobs()
-            triggerInfo('create_jobs', BuildResult.SUCCESS)
-        }
+        upstream('create_jobs')
     }
 
     stages {
