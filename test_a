@@ -2,8 +2,8 @@ import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
 
-shell('echo $WORKSPACE')
-def folderName = 'test_a_folder'
+def main_seed_name = "test_a"
+def folder_name = "${main_seed_name}_folder"
 def path_to_workspace = "/var/lib/jenkins/workspace/${folderName}"
 
 folder("${folderName}") {
