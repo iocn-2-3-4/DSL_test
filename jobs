@@ -16,6 +16,7 @@ job("${folder_name}/test") {
     }
     steps {
             systemGroovyScriptFile("hello.groovy")
+            println "${folder_name}"
     }
 }
 job("${folder_name}/build") {
