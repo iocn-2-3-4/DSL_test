@@ -7,8 +7,8 @@ import hudson.*
 //def folder_name = "${main_seed_name}_folder"
 //def path_to_workspace = "/var/lib/jenkins/workspace/${folder_name}"
     
-cloneWorkspace('test_a', 'Any')
-println folder_name
+//cloneWorkspace('test_a', 'Any')
+//println folder_name
     
 job("${folder_name}/test") {
     scm {
@@ -16,7 +16,7 @@ job("${folder_name}/test") {
     }
     steps {
             systemGroovyScriptFile("hello.groovy")
-            println "${folder_name}"
+            //println "${folder_name}"
     }
 }
 job("${folder_name}/build") {
