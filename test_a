@@ -7,7 +7,7 @@ def conf_file = readFileFromWorkspace('conf.json')
 def jsonSlurper = new JsonSlurper()
 def object = jsonSlurper.parseText("${conf_file}")
 object.each{ println it }
-def folder_name = object.names."someName"
+def folder_name = println object.names."someName"
 
 def main_seed_name = "test_a"
 //def folder_name = "${main_seed_name}_folder"
