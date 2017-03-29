@@ -10,6 +10,7 @@ def conf_file = readFileFromWorkspace('conf.json')
 
 def jsonSlurper = new JsonSlurper()
 def object = jsonSlurper.parseText("${conf_file}")
+object.each{ println it }
 
 folder("${folder_name}") {
     displayName("${folder_name}")
