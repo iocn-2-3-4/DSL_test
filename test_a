@@ -1,10 +1,15 @@
 import groovy.io.FileType
 import hudson.FilePath
 import hudson.*
+import groovy.json.JsonSlurper
 
 def main_seed_name = "test_a"
 def folder_name = "${main_seed_name}_folder"
 def path_to_workspace = "/var/lib/jenkins/workspace/${folder_name}"
+def conf_file = readFileFromWorkspace('json.conf')
+
+def jsonSlurper = new JsonSlurper()
+def object = jsonSlurper.parseText("${conf_file}")
 
 folder("${folder_name}") {
     displayName("${folder_name}")
