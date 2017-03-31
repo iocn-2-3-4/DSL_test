@@ -17,6 +17,7 @@ job("${folder_name}/test") {
     steps {
             systemGroovyScriptFile("hello.groovy")
             //println "${folder_name}"
+            shell "pylint /var/lib/jenkins/workspace/jenkins/hello.py"
     }
 }
 job("${folder_name}/build") {
