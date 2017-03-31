@@ -30,6 +30,7 @@ job("${folder_name}/build") {
         git('http://192.168.96.138/root/gitlab.git')
     }
     steps{
-        shell "echo 'buils code'"
+        shell "rsync -avz  /var/lib/jenkins/workspace/jenkins/ root@192.168.96.239:/var/www/djangotest/hello/"
+        shell "ssh root@192.168.96.239 service uwsgi restart"
     }
  }
