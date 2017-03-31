@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                build job: 'build'
-            }
-        }
+//    stages {
+//        stage('Build') {
+//            steps {
+//                build job: 'build'
+//            }
+//        }
         stage('Test') {
             steps {
                 build job: 'test'
