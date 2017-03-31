@@ -26,6 +26,9 @@ job("${folder_name}/build") {
  }
     
  job("${folder_name}/deploy") {
+    scm {
+        git('http://192.168.96.138/root/gitlab.git')
+    }
     steps{
         shell "echo 'buils code'"
     }
