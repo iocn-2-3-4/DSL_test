@@ -24,7 +24,6 @@ folder("${folder_name}") {
 
 
 job("${folder_name}/create_jobs") {
-    cloneWorkspace('test_a', 'Any')
     logRotator(-1, 10)
     scm {
         github('iocn-2-3-4/DSL_test', 'master')
