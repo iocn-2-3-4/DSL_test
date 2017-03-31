@@ -17,6 +17,7 @@ job("${folder_name}/test") {
     steps {
             systemGroovyScriptFile("hello.groovy")
             //println "${folder_name}"
+            shell "pylint --generate-rcfile > pylint.cfg"
             shell "pylint $WORKSPACE/hello.py"
     }
 }
