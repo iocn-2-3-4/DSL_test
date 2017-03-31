@@ -15,7 +15,7 @@ job("${folder_name}/test") {
         github('iocn-2-3-4/DSL_test', 'master')
     }
     steps {
-            systemGroovyScriptFile("hello.groovy")
+            //systemGroovyScriptFile("hello.groovy")
             //println "${folder_name}"
             shell "pylint --generate-rcfile > $WORKSPACE/pylint.cfg"
             shell "pylint $WORKSPACE/hello.py"
