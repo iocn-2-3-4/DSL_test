@@ -20,11 +20,11 @@ job("${folder_name}/test") {
             shell "pylint $WORKSPACE/hello.py"
     }
 }
-job("${folder_name}/build") {
-    steps{
-        shell "echo 'buils code'"
-    }
- }
+//job("${folder_name}/build") {
+//    steps{
+//        shell "echo 'buils code'"
+//    }
+// }
     
  job("${folder_name}/deploy") {
     scm {
